@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="app">
+        <div class='demo' :class="objClass" @click.prevent='click'>hello my friends</div>
+        <div :class='[demoClass ? className : "", {hi : demoClass}]'>class 2</div>
+        <click-button :ab='className + ": click here"' :style="{borderColor: colorRed}"></click-button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+
+        Vue.component('click-button', {
+            props: {
+                'ab': String
+            },
+            template: '<button>{{ab}}</button>'
+        })
+        let app  = new Vue({
+            el: '#app',
+            data: {
+                className: 'name',
+                demoClass: true,
+                'colorRed' : 'red',
+                'font20' : '20px',
+                myStyle: {
+                    color: 'red',
+                    backgroundColor: 'green',
+                    borderRadius: '5px',
+                },
+                shortHandStyle: ['20px', 'solid', 'pink']
+             },
+            methods: {
+                click: function() {
+                    this.demoClass = !this.demoClass
+                }
+            },
+            watch: {
+                fullClass: function (){
+                    // if(this.isFill){
+                    //     this.demoClass = ''
+                    // }
+                    // else {
+                    //     this.demoClass = 'class'
+                    // }
+                }
+            },
+            computed : {
+                objClass: function() {
+                    return {'class': this.demoClass, 
+                        'color-text': true, 
+                        'no-select': true
+                    }
+                }
+            } 
+        })
+    </script>
+</body>
+</html>

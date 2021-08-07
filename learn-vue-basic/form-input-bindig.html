@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model='text' maxlength="30">
+        <h2>Input: {{text}}</h2>
+        The textarea
+        <textarea v-model='textArea' ></textarea>
+        <h1>Text area:  {{textArea}}</h1>
+        Check box
+        <input type="checkbox" v-model='checkBox' id='checkBox'>
+        <h3>{{checkBox}}</h3>
+        List check box: <br>
+        <input type="checkbox" id="com-chien-toi" value="Cơm chiên tỏi" v-model="checkedNames">
+        <label for="com-chien-toi">Cơm chiên tỏi</label><br>
+        <input type="checkbox" id="dot-bi-xao-toi" value="Đọt bí xào tỏi" v-model="checkedNames">
+        <label for="dot-bi-xao-toi">Đọt bí xào tỏi</label><br>
+        <input type="checkbox" id="canh-rau-rung" value="Canh rau rừng" v-model="checkedNames">
+        <label for="canh-rau-rung">Canh rau rừng</label>
+        <br>
+        <span>Món đã chọn: {{ checkedNames }}</span>
+        <br>list radio<br>
+        <input type="radio" id="cac-mon-rau" value="Các món rau" v-model="picked">
+        <label for="cac-mon-rau">Các món rau</label><br>
+        <input type="radio" id="cac-mon-thit" value="Các món thịt" v-model="picked">
+        <label for="cac-mon-thit">Các món thịt</label><br>
+        <span>Đã chọn: {{ picked }}</span>
+  <br>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const app = new Vue({
+            el:"#app",
+            data: {
+                text: '',
+                textArea: '',
+                checkBox: false,
+                checkedNames: [],
+                picked: ''
+            }
+        })
+    </script>
+</body>
+</html>

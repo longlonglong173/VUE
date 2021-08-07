@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1 :style='{color: "blue"}' v-if='seen'>This will display if the data.seen is true</h1>
+        <h2 :style='{color: "red"}' v-else-if='!seen && count === 1'>This will display if the data.seen is false</h2>
+        <h2 :style='{color: "red"}' v-else-if='!seen && count === 2'>This will display if the data.seen is false2</h2>
+        <h2 :style='{color: "red"}' v-else-if='!seen && count === 3'>This will display if the data.seen is false3</h2>
+        new <h3 v-if='seen && count == 1'>count = 1</h3>
+        <h3 v-else>count = 2</h3> login form: 
+        <input placeholder="type 1" type='text' v-if='loginType == 1'>
+        <input placeholder="type 2" type='email' v-else :style='{borderColor: "red"}'>
+        <button @click='clickToChangeTypeLogin'>Click to change login type</button>
+
+        v-show
+        <h1 v-show='seen' :style='{color: "red"} '>This is the content of V-show </h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                seen: true,
+                count: 1,
+                loginType: 1
+            },
+            methods: {
+                clickToChangeTypeLogin: function () {
+                    this.loginType = this.loginType == 1 ? 2 : 1
+                    console.log(this.loginType)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

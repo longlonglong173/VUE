@@ -1,0 +1,10 @@
+.class{
+    background-color: red;
+}
+
+.color-text {
+    color: yellow
+}
+.no-select {
+    user-select: none;
+}

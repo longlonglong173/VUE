@@ -34,7 +34,7 @@
                     </h3>
                     <p class="brand">Thương hiệu: {{brand}}</p>
                     <p class="quantity" v-if="getProduct.quantity > 0">Còn lại: {{ getProduct.quantity }} Sản phẩm</p>
-                    <p class="quantity" v-if="getProduct.quantity <= 0">Sản phẩm đã hết hàng</p>
+                    <p class="quantity" v-else>Sản phẩm đã hết hàng</p>
                     <div class="wrapper-price">
                         <div class="final-price">{{ formatFinalPrice }}</div>
                         <div class="origin-price">{{ formatOriginalPrice }}</div>

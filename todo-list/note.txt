@@ -1,0 +1,24 @@
+cấu trúc: 
+
+app{
+    add-task{
+        input{
+
+        }
+        button{
+
+        }
+    }
+    tasks{
+        task{
+
+        }
+        
+    }
+    result{
+        //hiển thị task đã hoàn thành, chưa hoàn thành trên tổng số.
+    }
+    chart{
+        // số task đã quá hạn, và hoàn thiện trước thời điểm hiện tại
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" @click="hello">
+        {{name}}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+         let mixin = {
+             data: {
+               name: "Long"  
+             },
+             created() {
+                console.log("create in mixin")
+             },
+             methods:{
+                 hello(){
+                     console.log("click in mixin")
+                 },
+                 createMethod(){
+                     console.log("created in mixin")
+                 }
+             }
+         }
+         let app = new Vue({
+             el: "#app",
+             mixins: [mixin],
+             data: {
+                 name: "Thảo"
+             },
+             created() {
+                 this.createMethod()
+             },
+             methods: {
+                 hello() {
+                     console.log('click in component')
+                 },
+                 createMethod(){
+                     console.log("created in component");
+                 }
+             }
+            })
+    </script>
+</body>
+</html>
